@@ -34,3 +34,25 @@
         field.appendChild(p);
       }
     }
+
+
+
+
+
+    // Visitor counter — calls Azure Function API to get/increment count
+async function updateVisitorCount() {
+  const countEl = document.getElementById('visitor-count');
+  if (!countEl) return;
+
+  try {
+    const response = await fetch('https://YOUR-FUNCTION-APP-NAME.azurewebsites.net/api/GetResumeCounter');
+    if (!response.ok) throw new Error('Network response was not ok');
+    const data = await response.json();
+    countEl.textContent = data.count;
+  } catch (error) {
+    console.error('Failed to fetch visitor count:', error);
+    countEl.textContent = 'N/A';
+  }
+}
+
+updateVisitorCount();
