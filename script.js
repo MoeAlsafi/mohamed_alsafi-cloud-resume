@@ -36,53 +36,6 @@
     }
 
 
-
-
-
-//     // Visitor counter — calls Azure Function API to get/increment count
-// async function updateVisitorCount() {
-//   const countEl = document.getElementById('visitor-count');
-//   if (!countEl) return;
-
-//   try {
-//     const response = await fetch('https://YOUR-FUNCTION-APP-NAME.azurewebsites.net/api/GetResumeCounter');
-//     if (!response.ok) throw new Error('Network response was not ok');
-//     const data = await response.json();
-//     countEl.textContent = data.count;
-//   } catch (error) {
-//     console.error('Failed to fetch visitor count:', error);
-//     countEl.textContent = 'N/A';
-//   }
-// }
-
-// updateVisitorCount();
-
-
-
-// Visitor counter — calls Azure Function API to get/increment count
-// async function updateVisitorCount() {
-//   const countEl = document.getElementById('visitor-count');
-//   if (!countEl) return;
-
-//   try {
-//     // Updated to target your local running function route
-//     const response = await fetch('http://localhost:7071/api/counter');
-//     if (!response.ok) throw new Error('Network response was not ok');
-//     const data = await response.json();
-    
-//     // Check your backend API's response key. 
-//     // If your backend returns an object like { count: 5 }, this works perfectly.
-//     countEl.textContent = data.count; 
-//   } catch (error) {
-//     console.error('Failed to fetch visitor count:', error);
-//     countEl.textContent = 'N/A';
-//   }
-// }
-
-// updateVisitorCount();
-
-
-
 fetch('https://resume-visitor-count-e2abe4gscvf4gce8.uaenorth-01.azurewebsites.net/api/counter')
   .then(response => response.json())
   .then(data => {
