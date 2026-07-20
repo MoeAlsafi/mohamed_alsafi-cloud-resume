@@ -44,4 +44,4 @@ fetch('https://resume-visitor-count-e2abe4gscvf4gce8.uaenorth-01.azurewebsites.n
   .catch(error => {
     console.error('Could not load visitor count:', error);
     document.getElementById('visitor-count').textContent = '—';
-  });
+  });// trigger test
