@@ -26,4 +26,5 @@ jobs:
               --account-name moealsafiresume \
               --destination '$web' \
               --source frontend \
-              --overwrite
+              --overwrite \
+              --auth-mode login
